@@ -1,0 +1,1050 @@
+/* ==========================================================================
+   NovaMind Analytics — IT Department
+   style.css  |  Themed after the Study Diary (AWS Free Tier / PartyRock style)
+   ========================================================================== */
+
+/* -- CSS reset -- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* -- Design tokens, same as the Study Diary -- */
+:root {
+    --aws-ink:      #232F3E;   /* dark navy used for headings */
+    --aws-bg:       #FFFFFF;   /* white page background */
+    --aws-card-bg:  #F4F4F4;   /* light grey card background */
+
+    --text-dark:    #16191F;   /* near-black for main text */
+    --text-muted:   #545B64;   /* grey for descriptions and labels */
+    --aws-blue:     #0073BB;   /* classic AWS link / accent blue */
+
+    /* status colours */
+    --ok:    #1a7f4e;
+    --warn:  #a35c00;
+    --danger:#b91c1c;
+
+    --font-family: "Open Sans", "Helvetica Neue", Roboto, Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--aws-bg);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+a { text-decoration: none; }
+
+/* ==========================================================================
+   1. NAV BAR
+   ========================================================================== */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 58px;
+    background: var(--aws-ink);   /* dark header like AWS console */
+    border-bottom: 3px solid #ccff00; /* neon accent line from the Study Diary */
+}
+
+/* logo with pulsing dot */
+.nav-logo {
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    letter-spacing: -0.3px;
+}
+
+/* the little animated dot */
+.nav-logo span {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: #ccff00; /* neon lime, from Study Diary glow */
+    border-radius: 50%;
+    animation: pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.7); }
+}
+
+/* nav links */
+.nav-links {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: all 0.18s ease;
+    letter-spacing: 0.2px;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    background: rgba(255,255,255,0.1);
+}
+
+/* active link highlighted in neon lime */
+.nav-links a.active {
+    color: #ccff00;
+    background: rgba(204,255,0,0.1);
+}
+
+/* semester badge */
+.nav-badge {
+    font-size: 11px;
+    font-weight: 700;
+    background: rgba(204,255,0,0.12);
+    color: #ccff00;
+    border: 1px solid rgba(204,255,0,0.35);
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   2. HERO HEADER  (PartyRock lime/cream style — identical to Study Diary)
+   ========================================================================== */
+.hero-header {
+    background-color: #f2fbd6; /* soft lime/cream — exactly from the Study Diary */
+    padding: 72px 32px 88px;
+    border-bottom: 2px solid #16191f; /* bold black bottom border */
+    margin-bottom: 56px;
+}
+
+.hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* small uppercase label above the big title */
+.dept-tag {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dept-tag::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2.5px;
+    background: var(--text-dark);
+    border-radius: 2px;
+}
+
+/* big heading */
+.hero-title {
+    font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text-dark);
+    line-height: 1.08;
+    margin-bottom: 14px;
+}
+
+/* the sub-line in slightly smaller text */
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+/* description paragraph */
+.hero-desc {
+    font-size: 16px;
+    color: var(--text-dark);
+    max-width: 560px;
+    line-height: 1.65;
+    margin-bottom: 36px;
+}
+
+/* hero stats row */
+.hero-stats {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* big number */
+.stat-val {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+
+/* the % or h suffix */
+.stat-val .unit {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--aws-blue);
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. STATUS BAR
+   ========================================================================== */
+.status-bar {
+    max-width: 1400px;
+    margin: -32px auto 40px;   /* overlaps slightly into the hero */
+    padding: 0 32px;
+}
+
+.status-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: var(--aws-card-bg);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 14px 20px;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.status-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-right: 6px;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.status-pill::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+/* green */
+.pill-ok   { background: rgba(26,127,78,0.09);  color: var(--ok);   border: 1px solid rgba(26,127,78,0.22); }
+.pill-ok::before   { background: var(--ok);  box-shadow: 0 0 4px var(--ok); }
+/* orange */
+.pill-warn { background: rgba(163,92,0,0.09);   color: var(--warn); border: 1px solid rgba(163,92,0,0.22); }
+.pill-warn::before { background: var(--warn); }
+/* blue */
+.pill-info { background: rgba(0,115,187,0.09);  color: var(--aws-blue); border: 1px solid rgba(0,115,187,0.22); }
+.pill-info::before { background: var(--aws-blue); }
+
+/* ==========================================================================
+   4. MAIN SECTION + CONTAINER
+   ========================================================================== */
+.main-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px 80px;
+}
+
+/* section heading with a horizontal line */
+.section-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    margin-top: 40px;
+}
+
+.section-head:first-child { margin-top: 0; }
+
+.section-head h2 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.section-head::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #ddd;
+}
+
+/* ==========================================================================
+   5. CARD GRID  (Study Diary auto-fill style)
+   ========================================================================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 0;
+}
+
+/* special layout helpers */
+.col-span-2 { grid-column: span 2; }
+.col-span-3 { grid-column: 1 / -1; } /* full width */
+
+/* ==========================================================================
+   6. THE GLOWING AWS CARD  (copied exactly from Study Diary)
+   ========================================================================== */
+.aws-card {
+    position: relative;
+    background-color: var(--aws-card-bg);
+    border-radius: 16px;
+    z-index: 1;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* neon glowing border — hidden by default */
+.aws-card::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 19px;
+    background: linear-gradient(135deg, #ccff00, #00ff88, #00bfff);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: translate3d(0,0,0);
+}
+
+/* blurred glow behind the card */
+.aws-card::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 19px;
+    background: linear-gradient(135deg, #ccff00, #00ff88, #00bfff);
+    z-index: -2;
+    filter: blur(12px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: translate3d(0,0,0);
+}
+
+/* hover: card goes white, neon border appears */
+.aws-card:hover { background-color: #ffffff; }
+.aws-card:hover::before,
+.aws-card:hover::after { opacity: 1; }
+
+/* inner padding */
+.card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* ==========================================================================
+   7. CARD INNER ELEMENTS
+   ========================================================================== */
+
+/* pill tags at the top */
+.card-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+/* each pill (white chip on grey card) */
+.card-pill {
+    background-color: #ffffff;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 9px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+/* the little icon + category label */
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.meta-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.card-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.card-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 24px;
+}
+
+/* "Learn more →" link at the bottom */
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.learn-more {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+    transition: color 0.2s ease;
+}
+
+.learn-more:hover { color: var(--aws-blue); }
+
+.arrow-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+}
+
+.learn-more:hover .arrow-icon { transform: translateX(4px); }
+
+/* ==========================================================================
+   8. SUPPORT TICKET FORM  (inside a card)
+   ========================================================================== */
+.ticket-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* two-column row */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+/* inputs, selects, textareas share the same style */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 9px 12px;
+    color: var(--text-dark);
+    font-family: var(--font-family);
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.18s, box-shadow 0.18s;
+    width: 100%;
+    appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--aws-blue);
+    box-shadow: 0 0 0 3px rgba(0,115,187,0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 82px;
+}
+
+/* ==========================================================================
+   9. BUTTONS
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-family: var(--font-family);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    border: none;
+    outline: none;
+}
+
+/* solid dark primary button */
+.btn-primary {
+    background: var(--text-dark);
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.btn-primary:hover {
+    background: var(--aws-blue);
+    transform: translateY(-1px);
+}
+
+/* outlined ghost button */
+.btn-ghost {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid #ccc;
+}
+
+.btn-ghost:hover {
+    color: var(--text-dark);
+    border-color: var(--aws-blue);
+    background: rgba(0,115,187,0.05);
+}
+
+/* ==========================================================================
+   10. DEVICE INVENTORY TABLE
+   ========================================================================== */
+.table-wrap { overflow-x: auto; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+thead th {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 9px 12px;
+    text-align: left;
+    border-bottom: 2px solid #e0e0e0;
+    background: #eaeaea;
+}
+
+thead th:first-child { border-radius: 6px 0 0 0; }
+thead th:last-child  { border-radius: 0 6px 0 0; }
+
+tbody td {
+    padding: 11px 12px;
+    color: var(--text-dark);
+    border-bottom: 1px solid #ececec;
+    vertical-align: middle;
+}
+
+tbody tr:hover td { background: #ffffff; }
+tbody tr:last-child td { border-bottom: none; }
+
+/* status badges */
+.badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.badge-ok   { background: rgba(26,127,78,0.11);  color: var(--ok); }
+.badge-warn { background: rgba(163,92,0,0.11);   color: var(--warn); }
+.badge-off  { background: rgba(185,28,28,0.11);  color: var(--danger); }
+.badge-info { background: rgba(0,115,187,0.11);  color: var(--aws-blue); }
+
+/* ==========================================================================
+   11. WORKFLOW STEPS
+   ========================================================================== */
+.workflow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.wf-step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 13px 0;
+    border-bottom: 1px solid #e4e4e4;
+    animation: fadeUp 0.4s ease both;
+}
+
+.wf-step:last-child { border-bottom: none; }
+
+/* numbered circle */
+.wf-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-dark);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.wf-title { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 2px; }
+.wf-sub   { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+
+/* ==========================================================================
+   12. TOOLS GRID
+   ========================================================================== */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+#card-tools .card-desc {
+    flex-grow: 0;
+}
+
+#card-tools .tools-grid {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* each tool chip — white card inside a grey card */
+.tool-item {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.tool-item:hover {
+    border-color: var(--aws-blue);
+    box-shadow: 0 2px 8px rgba(0,115,187,0.1);
+}
+
+.tool-name { font-size: 13px; font-weight: 700; color: var(--text-dark); }
+.tool-use  { font-size: 11px; color: var(--text-muted); font-weight: 600; }
+
+/* ==========================================================================
+   13. TOAST NOTIFICATION
+   ========================================================================== */
+#toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--aws-ink);
+    border: 1.5px solid #ccff00;
+    color: #ccff00;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 20px rgba(204,255,0,0.2);
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   14. REMOTE SUPPORT BUTTONS — inline style override helpers
+   ========================================================================== */
+.remote-btn-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.remote-btn {
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.dot-green  { color: #1a7f4e; font-size: 18px; }
+.dot-blue   { color: var(--aws-blue); font-size: 18px; }
+.dot-lime   { color: #6b9900; font-size: 18px; }
+
+/* ==========================================================================
+   14.b CYBERSECURITY CARD & SYSTEM PROTECTION
+   ========================================================================== */
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+.security-subcard {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.22s, box-shadow 0.22s;
+    position: relative;
+    overflow: hidden;
+}
+
+.security-subcard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: var(--aws-blue);
+}
+
+.security-subcard-header {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.security-subcard-val {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-top: 2px;
+}
+
+.security-subcard-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    font-weight: 600;
+}
+
+.security-subcard-footer {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: auto;
+    border-top: 1px dashed #e5e5e5;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-weight: 600;
+}
+
+/* mini action buttons in subcards */
+.btn-mini {
+    font-family: var(--font-family);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding: 4px 10px;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    outline: none;
+}
+
+.btn-mini:hover {
+    color: var(--text-dark);
+    border-color: var(--aws-blue);
+    background: rgba(0, 115, 187, 0.05);
+}
+
+.btn-mini.warning {
+    color: var(--warn);
+    border-color: rgba(163, 92, 0, 0.4);
+}
+
+.btn-mini.warning:hover {
+    color: #ffffff;
+    border-color: var(--warn);
+    background: var(--warn);
+}
+
+.btn-mini:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f5f5f5 !important;
+    border-color: #ddd !important;
+    color: #999 !important;
+}
+
+/* state color helpers */
+.text-ok { color: var(--ok) !important; }
+.text-warn { color: var(--warn) !important; }
+.text-danger { color: var(--danger) !important; }
+
+/* dynamic progress bar */
+.security-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.security-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--aws-blue), #ccff00);
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* maintenance log styling */
+.maintenance-log-container {
+    margin-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 16px;
+}
+
+.maintenance-log-header {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.maintenance-log-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* custom scrollbar for log list */
+.maintenance-log-list::-webkit-scrollbar {
+    width: 6px;
+}
+.maintenance-log-list::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+.maintenance-log-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.maintenance-log-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    line-height: 1.4;
+    animation: slideInLog 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.2) both;
+}
+
+.maintenance-log-item .log-time {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    background: #eaeaea;
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.maintenance-log-item .log-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+.log-dot.dot-ok {
+    background: var(--ok);
+    box-shadow: 0 0 4px var(--ok);
+}
+
+.log-dot.dot-info {
+    background: var(--aws-blue);
+    box-shadow: 0 0 4px var(--aws-blue);
+}
+
+.log-dot.dot-warn {
+    background: var(--warn);
+    box-shadow: 0 0 4px var(--warn);
+}
+
+.log-dot.dot-critical {
+    background: var(--danger);
+    box-shadow: 0 0 4px var(--danger);
+}
+
+.maintenance-log-item .log-msg {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* simulator effect styles */
+@keyframes pulseWarn {
+    0%, 100% { border-color: #e0e0e0; box-shadow: none; }
+    50% { border-color: var(--danger); box-shadow: 0 0 10px rgba(185, 28, 28, 0.2); }
+}
+
+.pulse-warning-card {
+    animation: pulseWarn 1.2s infinite;
+}
+
+@keyframes flashOk {
+    0% { background: rgba(26, 127, 78, 0.1); }
+    100% { background: #ffffff; }
+}
+
+.flash-ok-bg {
+    animation: flashOk 1s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
+/* log entrance slide */
+@keyframes slideInLog {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   15. FOOTER
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 24px 20px;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 600;
+    border-top: 1px solid #e0e0e0;
+    background: var(--aws-card-bg);
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+}
+
+footer strong { color: var(--text-dark); }
+
+/* ==========================================================================
+   16. ANIMATIONS
+   ========================================================================== */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   17. RESPONSIVE — tablet
+   ========================================================================== */
+@media (max-width: 900px) {
+    .col-span-2, .col-span-3 { grid-column: 1 / -1; }
+    .tools-grid { grid-template-columns: 1fr 1fr; }
+    .security-grid { grid-template-columns: repeat(2, 1fr); }
+    .main-content { padding: 0 20px 60px; }
+    .hero-header { padding: 52px 20px 68px; }
+    .status-bar { padding: 0 20px; }
+}
+
+/* ==========================================================================
+   18. RESPONSIVE — mobile
+   ========================================================================== */
+@media (max-width: 600px) {
+    nav { padding: 0 16px; }
+    .nav-links { display: none; }     /* hide nav links on small screens */
+    .cards-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: 1fr 1fr; }
+    .security-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 20px; }
+    .hero-header { padding: 40px 16px 56px; }
+    .status-bar { margin-top: -16px; }
+}

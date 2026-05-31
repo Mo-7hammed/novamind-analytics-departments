@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NovaMind Analytics IT Department — manage infrastructure, submit support tickets, and monitor device inventory.">
+    <title>NovaMind Analytics — IT Department</title>
+
+    <!-- Open Sans — same font as the Study Diary template -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Our CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAV — dark AWS-style top bar
+════════════════════════════════════ -->
+<nav>
+    <!-- Logo with the pulsing lime dot -->
+    <a class="nav-logo" href="#">
+        <span></span>
+        NovaMind Analytics
+    </a>
+
+    <!-- Department navigation links -->
+    <ul class="nav-links">
+        <li><a href="#" class="active">IT</a></li>
+        <li><a href="#">Marketing</a></li>
+        <li><a href="#">HR</a></li>
+        <li><a href="#">Finance</a></li>
+    </ul>
+
+    <!-- Small semester badge -->
+    <div class="nav-badge">Summer 2026</div>
+</nav>
+
+
+<!-- ══════════════════════════════════
+     HERO — lime/cream PartyRock style
+     (exactly like the Study Diary header)
+════════════════════════════════════ -->
+<header class="hero-header">
+    <div class="hero-container">
+
+        <!-- small uppercase label -->
+        <div class="dept-tag">IT Department</div>
+
+        <!-- One h1 per page — good for SEO -->
+        <h1 class="hero-title">Digital Infrastructure<br>&amp; Technical Ops</h1>
+
+        <p class="hero-subtitle">NovaMind Analytics</p>
+
+        <p class="hero-desc">
+            Managing NovaMind's cloud systems, website platform, cybersecurity,
+            and employee technical support across all departments.
+        </p>
+
+        <!-- Quick stats row below the description -->
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-val">99<span class="unit">%</span></span>
+                <span class="stat-label">Uptime SLA</span>
+            </div>
+            <div class="stat">
+                <span class="stat-val">14</span>
+                <span class="stat-label">Active devices</span>
+            </div>
+            <div class="stat">
+                <span class="stat-val">3<span class="unit">h</span></span>
+                <span class="stat-label">Avg. ticket resolve</span>
+            </div>
+            <div class="stat">
+                <span class="stat-val">SSL</span>
+                <span class="stat-label">Secured &amp; live</span>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- ══════════════════════════════════
+     STATUS BAR — system health pills
+════════════════════════════════════ -->
+<section class="status-bar" aria-label="System status">
+    <div class="status-row">
+        <span class="status-label">Systems</span>
+        <span class="status-pill pill-ok">Website — Online</span>
+        <span class="status-pill pill-ok">Database — Healthy</span>
+        <span class="status-pill pill-ok">SSL — Valid</span>
+        <span class="status-pill pill-warn">Backup — Running</span>
+        <span class="status-pill pill-ok">Wi-Fi — Operational</span>
+        <span class="status-pill pill-info">Update scheduled</span>
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     MAIN CONTENT — all sections
+════════════════════════════════════ -->
+<main class="main-content">
+
+
+    <!-- ── SECTION: QUICK ACTIONS ── -->
+    <div class="section-head"><h2>Quick Actions</h2></div>
+
+    <div class="cards-grid">
+
+        <!-- Domain & Hosting card -->
+        <article class="aws-card" id="card-domain">
+            <div class="card-content">
+                <div class="card-tags">
+                    <div class="card-pill">Infrastructure</div>
+                    <div class="card-pill">DNS</div>
+                </div>
+
+                <div class="card-meta">
+                    <!-- tag icon -->
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    <span>Hosting &amp; DNS</span>
+                </div>
+
+                <h3 class="card-title">🌐 Domain &amp; Hosting</h3>
+                <p class="card-desc">
+                    Registered via Namecheap. Hosted on Hostinger VPS. DNS configured
+                    and pointing to live server.
+                </p>
+
+                <div class="card-bottom">
+                    <a href="#" class="learn-more">
+                        View DNS settings
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- WordPress CMS card -->
+        <article class="aws-card" id="card-wordpress">
+            <div class="card-content">
+                <div class="card-tags">
+                    <div class="card-pill">CMS</div>
+                    <div class="card-pill">Website</div>
+                </div>
+
+                <div class="card-meta">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    <span>Content Management</span>
+                </div>
+
+                <h3 class="card-title">🗂 WordPress CMS</h3>
+                <p class="card-desc">
+                    Company website built on WordPress with Elementor. Themes, plugins,
+                    and user access managed here.
+                </p>
+
+                <div class="card-bottom">
+                    <a href="#" class="learn-more">
+                        Open WP Admin
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Security & SSL card -->
+        <article class="aws-card" id="card-security">
+            <div class="card-content">
+                <div class="card-tags">
+                    <div class="card-pill">Security</div>
+                    <div class="card-pill">SSL</div>
+                </div>
+
+                <div class="card-meta">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    <span>Cybersecurity</span>
+                </div>
+
+                <h3 class="card-title">🔒 Security &amp; SSL</h3>
+                <p class="card-desc">
+                    Cloudflare DNS protection active. Bitdefender antivirus deployed.
+                    SSL certificate auto-renews.
+                </p>
+
+                <div class="card-bottom">
+                    <a href="#" class="learn-more">
+                        Security dashboard
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- DNS Configuration card -->
+        <article class="aws-card col-span-3" id="card-dns">
+            <div class="card-content">
+                <div class="card-tags">
+                    <div class="card-pill">Infrastructure</div>
+                    <div class="card-pill">DNS Configuration</div>
+                </div>
+
+                <div class="card-meta">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    <span>DNS Records</span>
+                </div>
+
+                <h3 class="card-title">🌐 DNS Configuration</h3>
+                <p class="card-desc" style="margin-bottom: 16px;">
+                    Active DNS records connecting NovaMind's domain to Hostinger VPS via Namecheap.
+                </p>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Name</th>
+                                <th>Value</th>
+                                <th>TTL</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge badge-ok">A</span></td>
+                                <td>@</td>
+                                <td>185.199.108.153</td>
+                                <td>Auto</td>
+                                <td><span class="badge badge-ok">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-ok">CNAME</span></td>
+                                <td>www</td>
+                                <td>novamind-analytics.com</td>
+                                <td>Auto</td>
+                                <td><span class="badge badge-ok">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-info">MX</span></td>
+                                <td>@</td>
+                                <td>mail.novamind-analytics.com</td>
+                                <td>3600</td>
+                                <td><span class="badge badge-ok">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-info">TXT</span></td>
+                                <td>@</td>
+                                <td>v=spf1 include:google.com ~all</td>
+                                <td>3600</td>
+                                <td><span class="badge badge-ok">Verified</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-info">AAAA</span></td>
+                                <td>@</td>
+                                <td>2606:4700:3037::ac43:d4a7</td>
+                                <td>Auto</td>
+                                <td><span class="badge badge-warn">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </article>
+
+    </div><!-- /cards-grid quick actions -->
+
+
+    <!-- ── SECTION: SUPPORT ── -->
+    <div class="section-head"><h2>Support</h2></div>
+
+    <div class="cards-grid">
+
+        <!-- Support Ticket Form — takes up 2 columns -->
+        <article class="aws-card col-span-2" id="card-ticket">
+            <div class="card-content">
+                <div class="card-tags">
+                    <div class="card-pill">Support</div>
+                    <div class="card-pill">3h SLA</div>
+                </div>
+
+                <div class="card-meta">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    <span>Helpdesk</span>
+                </div>
+
+                <h3 class="card-title">🎧 Submit a Support Ticket</h3>
+                <p class="card-desc">
+                    Report a technical issue and the IT team will respond within 3 working hours.
+                </p>
+
+                <!-- The ticket form itself -->
+                <form class="ticket-form" onsubmit="return false;">
+                    <!-- Row 1: Name + Department -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="f-name">Your Name</label>
+                            <input type="text" id="f-name" placeholder="e.g. Sara Ahmed">
+                        </div>
+                        <div class="form-group">
+                            <label for="f-dept">Department</label>
+                            <select id="f-dept">
+                                <option value="">Select department</option>
+                                <option>IT</option>
+                                <option>Marketing</option>
+                                <option>HR</option>
+                                <option>Finance</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Issue Type + Priority -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="f-type">Issue Type</label>
+                            <select id="f-type">
+                                <option value="">Select type</option>
+                                <option>Hardware</option>
+                                <option>Software</option>
+                                <option>Network / VPN</option>
+                                <option>Account / Password</option>
+                                <option>Website</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="f-priority">Priority</label>
+                            <select id="f-priority">
+                                <option>Low</option>
+                                <option selected>Medium</option>
+                                <option>High</option>
+                                <option>Critical</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="form-group">
+                        <label for="f-desc">Description</label>
+                        <textarea id="f-desc" placeholder="Describe the issue in detail…"></textarea>
+                    </div>
+
+                    <!-- Buttons + ticket ID feedback -->
+                    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                        <button class="btn btn-primary" id="btn-submit" onclick="submitTicket()">
+                            Submit Ticket
+                        </button>
+                        <button class="btn btn-ghost" id="btn-clear" onclick="clearTicket()">
+                            Clear
+                        </button>
+                        <!-- shows the ticket ID after submit, or validation error -->
+                        <span id="ticket-id" style="font-size: 12px; font-weight: 600; color: #545B64; margin-left: 4px;"></span>
+                    </div>
+                </form>
+
+            </div>
+        </article>
+
+        <!-- Remote Support card -->
+        <article class="aws-card" id="card-remote">
+            <div class="card-content">
+                <div class="card-tags">
+                    <div class="card-pill">Remote</div>
+                    <div class="card-pill">Live Support</div>
+                </div>
+
+                <div class="card-meta">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    <span>Remote Tools</span>
+                </div>
+
+                <h3 class="card-title">🖥 Remote Support</h3>
+                <p class="card-desc">
+                    Connect to an employee's device for live troubleshooting using
+                    AnyDesk or TeamViewer.
+                </p>
+
+                <!-- Quick launch buttons -->
+                <div class="remote-btn-list">
+                    <button class="btn btn-ghost remote-btn" id="btn-anydesk">
+                        <span class="dot-green">⬡</span> Launch AnyDesk
+                    </button>
+                    <button class="btn btn-ghost remote-btn" id="btn-teamviewer">
+                        <span class="dot-blue">⬡</span> Launch TeamViewer
+                    </button>
+                    <button class="btn btn-ghost remote-btn" id="btn-zoom">
+                        <span class="dot-lime">⬡</span> Start Zoom Call
+                    </button>
+                </div>
+            </div>
+        </article>
+
+    </div><!-- /cards-grid support -->
+
+
+    <!-- ── SECTION: INFRASTRUCTURE ── -->
+    <div class="section-head"><h2>Infrastructure</h2></div>
+
+    <!-- Device Inventory Table — full width -->
+    <article class="aws-card col-span-3" id="card-devices" style="margin-bottom: 24px;">
+        <div class="card-content">
+            <div class="card-tags">
+                <div class="card-pill">Inventory</div>
+                <div class="card-pill">14 Devices</div>
+            </div>
+
+            <div class="card-meta">
+                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                </svg>
+                <span>Device Management</span>
+            </div>
+
+            <h3 class="card-title">💻 Device Inventory</h3>
+            <p class="card-desc" style="margin-bottom: 16px;">
+                All registered company devices and their current status.
+            </p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Device</th>
+                            <th>Assigned To</th>
+                            <th>Department</th>
+                            <th>OS</th>
+                            <th>Antivirus</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MacBook Pro 14"</td>
+                            <td>IT Admin</td>
+                            <td>IT</td>
+                            <td>macOS Sequoia</td>
+                            <td>Bitdefender ✓</td>
+                            <td><span class="badge badge-ok">Online</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dell XPS 15</td>
+                            <td>Marketing Lead</td>
+                            <td>Marketing</td>
+                            <td>Windows 11</td>
+                            <td>Bitdefender ✓</td>
+                            <td><span class="badge badge-ok">Online</span></td>
+                        </tr>
+                        <tr>
+                            <td>HP EliteBook 840</td>
+                            <td>HR Manager</td>
+                            <td>HR</td>
+                            <td>Windows 11</td>
+                            <td>Bitdefender ✓</td>
+                            <td><span class="badge badge-warn">Update pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>Surface Pro 9</td>
+                            <td>Finance Analyst</td>
+                            <td>Finance</td>
+                            <td>Windows 11</td>
+                            <td>Bitdefender ✓</td>
+                            <td><span class="badge badge-ok">Online</span></td>
+                        </tr>
+                        <tr>
+                            <td>iPhone 15 Pro</td>
+                            <td>Sales Rep</td>
+                            <td>Sales</td>
+                            <td>iOS 17</td>
+                            <td>MDM enrolled</td>
+                            <td><span class="badge badge-ok">Online</span></td>
+                        </tr>
+                        <tr>
+                            <td>Canon MF745C</td>
+                            <td>Shared</td>
+                            <td>All</td>
+                            <td>Firmware 3.2</td>
+                            <td>N/A</td>
+                            <td><span class="badge badge-off">Offline</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+
+    <!-- Cybersecurity & System Protection card — full width -->
+    <article class="aws-card col-span-3" id="card-cybersecurity" style="margin-bottom: 24px;">
+        <div class="card-content">
+            <div class="card-tags">
+                <div class="card-pill">Security</div>
+                <div class="card-pill">Real-time</div>
+            </div>
+
+            <div class="card-meta">
+                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>System Protection</span>
+            </div>
+
+            <h3 class="card-title">🔒 Cybersecurity &amp; System Protection</h3>
+            <p class="card-desc" style="margin-bottom: 16px;">
+                Real-time security status across NovaMind's infrastructure. All systems monitored and protected 24/7.
+            </p>
+
+            <!-- Dynamic progress scanner overlay or bar -->
+            <div class="security-progress-wrapper" id="sec-progress-wrapper" style="display: none; margin-bottom: 16px;">
+                <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; margin-bottom: 6px;">
+                    <span id="sec-progress-status" style="color: var(--aws-blue);">Running quick scan...</span>
+                    <span id="sec-progress-percent" style="color: var(--text-dark);">0%</span>
+                </div>
+                <div class="security-progress-bar">
+                    <div class="security-progress-fill" id="sec-progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <!-- Grid containing 4 security metrics -->
+            <div class="security-grid">
+                <!-- SSL Certificate -->
+                <div class="security-subcard" id="sec-ssl">
+                    <div class="security-subcard-header">SSL Certificate</div>
+                    <div class="security-subcard-val text-ok" id="ssl-status">Valid</div>
+                    <div class="security-subcard-meta">
+                        Expires in <span id="ssl-days" class="text-ok">89</span> days
+                    </div>
+                    <div class="security-subcard-footer">Provider: Cloudflare</div>
+                </div>
+
+                <!-- Last Backup -->
+                <div class="security-subcard" id="sec-backup">
+                    <div class="security-subcard-header">Last Backup</div>
+                    <div class="security-subcard-val" id="backup-time">2h ago</div>
+                    <div class="security-subcard-meta">
+                        Next in <span id="next-backup" class="text-warn">22h</span>
+                    </div>
+                    <div class="security-subcard-footer">
+                        <span>Google Cloud Storage</span>
+                        <button class="btn-mini" onclick="runBackup(event)" id="btn-run-backup">Run Backup</button>
+                    </div>
+                </div>
+
+                <!-- Firewall -->
+                <div class="security-subcard" id="sec-firewall">
+                    <div class="security-subcard-header">Firewall</div>
+                    <div class="security-subcard-val text-ok" id="firewall-status">Active</div>
+                    <div class="security-subcard-meta">
+                        <span id="blocked-count" class="text-ok" style="font-weight: 700;">142</span> threats blocked
+                    </div>
+                    <div class="security-subcard-footer">
+                        <span>Bitdefender</span>
+                        <button class="btn-mini warning" onclick="triggerThreatSimulation(event)" id="btn-simulate-threat">Simulate Threat</button>
+                    </div>
+                </div>
+
+                <!-- Antivirus Scan -->
+                <div class="security-subcard" id="sec-antivirus">
+                    <div class="security-subcard-header">Antivirus Scan</div>
+                    <div class="security-subcard-val text-ok" id="antivirus-status">Clean</div>
+                    <div class="security-subcard-meta">
+                        Last scan: <span id="antivirus-time">Today 09:14</span>
+                    </div>
+
+                    <!-- Scan progress elements -->
+                    <div id="quick-scan-wrapper" style="display: none; margin-top: 12px; margin-bottom: 8px;">
+                        <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; margin-bottom: 4px;">
+                            <span id="quick-scan-label" style="color: var(--aws-blue);">Ready</span>
+                            <span id="quick-scan-percent">0%</span>
+                        </div>
+                        <div class="security-progress-bar">
+                            <div class="security-progress-fill" id="quick-scan-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="security-subcard-footer">
+                        <span>14 devices safe</span>
+                        <button class="btn-mini" onclick="runQuickScan(event)" id="btn-run-scan">Quick Scan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maintenance Log -->
+            <div class="maintenance-log-container">
+                <div class="maintenance-log-header">Maintenance Log</div>
+                <div class="maintenance-log-list" id="maintenance-log">
+                    <!-- populated dynamically -->
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- ── SECTION: WORKFLOW & TOOLS ── -->
+    <div class="section-head"><h2>Workflow &amp; Tools</h2></div>
+
+    <div class="cards-grid">
+
+        <!-- IT Workflow steps -->
+        <article class="aws-card" id="card-workflow">
+            <div class="card-content">
+                <div class="card-tags">
+                    <div class="card-pill">Process</div>
+                    <div class="card-pill">7 Steps</div>
+                </div>
+
+                <div class="card-meta">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    <span>IT Operations</span>
+                </div>
+
+                <h3 class="card-title">⚙️ IT Department Workflow</h3>
+
+                <!-- numbered workflow steps -->
+                <div class="workflow">
+                    <div class="wf-step" style="animation-delay: 0.05s">
+                        <div class="wf-num">1</div>
+                        <div class="wf-content">
+                            <div class="wf-title">Receive IT request</div>
+                            <div class="wf-sub">Via support ticket or Slack</div>
+                        </div>
+                    </div>
+                    <div class="wf-step" style="animation-delay: 0.10s">
+                        <div class="wf-num">2</div>
+                        <div class="wf-content">
+                            <div class="wf-title">Register domain &amp; hosting</div>
+                            <div class="wf-sub">Namecheap + Hostinger</div>
+                        </div>
+                    </div>
+                    <div class="wf-step" style="animation-delay: 0.15s">
+                        <div class="wf-num">3</div>
+                        <div class="wf-content">
+                            <div class="wf-title">Configure DNS &amp; deploy site</div>
+                            <div class="wf-sub">WordPress + Elementor</div>
+                        </div>
+                    </div>
+                    <div class="wf-step" style="animation-delay: 0.20s">
+                        <div class="wf-num">4</div>
+                        <div class="wf-content">
+                            <div class="wf-title">Apply security layers</div>
+                            <div class="wf-sub">SSL + Cloudflare + Bitdefender</div>
+                        </div>
+                    </div>
+                    <div class="wf-step" style="animation-delay: 0.25s">
+                        <div class="wf-num">5</div>
+                        <div class="wf-content">
+                            <div class="wf-title">Provide remote support</div>
+                            <div class="wf-sub">AnyDesk / TeamViewer / Zoom</div>
+                        </div>
+                    </div>
+                    <div class="wf-step" style="animation-delay: 0.30s">
+                        <div class="wf-num">6</div>
+                        <div class="wf-content">
+                            <div class="wf-title">Network &amp; software setup</div>
+                            <div class="wf-sub">Deploying business apps, configuring secure office Wi-Fi, and setting up VPNs</div>
+                        </div>
+                    </div>
+                    <div class="wf-step" style="animation-delay: 0.35s">
+                        <div class="wf-num">7</div>
+                        <div class="wf-content">
+                            <div class="wf-title">Maintenance &amp; backup</div>
+                            <div class="wf-sub">Weekly backup + monitoring</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- Digital Tools Stack — takes 2 columns -->
+        <article class="aws-card col-span-2" id="card-tools">
+            <div class="card-content">
+                <div class="card-tags">
+                    <div class="card-pill">Stack</div>
+                    <div class="card-pill">12 Tools</div>
+                </div>
+
+                <div class="card-meta">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    <span>Digital Toolset</span>
+                </div>
+
+                <h3 class="card-title">🛠 Digital Tools Stack</h3>
+                <p class="card-desc" style="margin-bottom: 16px;">
+                    All tools used by the IT department at NovaMind Analytics.
+                </p>
+
+                <!-- 3-column grid of tool chips -->
+                <div class="tools-grid">
+                    <div class="tool-item"><div class="tool-name">Namecheap</div><div class="tool-use">Domain registration</div></div>
+                    <div class="tool-item"><div class="tool-name">GoDaddy</div><div class="tool-use">VPS hosting</div></div>
+                    <div class="tool-item"><div class="tool-name">Hostinger</div><div class="tool-use">Web deployment</div></div>
+                    <div class="tool-item"><div class="tool-name">WordPress</div><div class="tool-use">CMS &amp; website</div></div>
+                    <div class="tool-item"><div class="tool-name">Elementor</div><div class="tool-use">Page builder</div></div>
+                    <div class="tool-item"><div class="tool-name">Cloudflare</div><div class="tool-use">DNS &amp; SSL</div></div>
+                    <div class="tool-item"><div class="tool-name">AnyDesk</div><div class="tool-use">Remote support</div></div>
+                    <div class="tool-item"><div class="tool-name">TeamViewer</div><div class="tool-use">Remote desktop</div></div>
+                    <div class="tool-item"><div class="tool-name">Bitdefender</div><div class="tool-use">Cybersecurity</div></div>
+                    <div class="tool-item"><div class="tool-name">VS Code</div><div class="tool-use">Development</div></div>
+                    <div class="tool-item"><div class="tool-name">phpMyAdmin</div><div class="tool-use">Database mgmt</div></div>
+                    <div class="tool-item"><div class="tool-name">Google Workspace</div><div class="tool-use">Cloud &amp; email</div></div>
+                </div>
+            </div>
+        </article>
+
+    </div><!-- /cards-grid workflow & tools -->
+
+</main>
+
+
+<!-- ══════════════════════════════════
+     TOAST NOTIFICATION
+════════════════════════════════════ -->
+<div id="toast">✓ Ticket submitted successfully</div>
+
+
+<!-- ══════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<footer>
+    <strong>NovaMind Analytics</strong> &nbsp;·&nbsp; IT Department &nbsp;·&nbsp; Summer 2026
+</footer>
+
+
+<!-- JS file at the bottom so the DOM is ready when it runs -->
+<script src="script.js"></script>
+</body>
+</html>
