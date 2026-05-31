@@ -62,23 +62,29 @@ nav {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 9px;
+    gap: 10px;
     letter-spacing: -0.3px;
 }
 
-/* the little animated dot */
-.nav-logo span {
-    display: inline-block;
+/* pulsing lime dot next to logo */
+.logo-dot {
     width: 9px;
     height: 9px;
-    background: #ccff00; /* neon lime, from Study Diary glow */
+    background: #ccff00;
     border-radius: 50%;
+    box-shadow: 0 0 10px #ccff00;
     animation: pulse 2.2s ease-in-out infinite;
 }
 
 @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50%       { opacity: 0.5; transform: scale(0.7); }
+}
+
+.logo-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
 }
 
 /* nav links */

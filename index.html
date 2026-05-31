@@ -22,8 +22,22 @@
 <nav>
     <!-- Logo with the pulsing lime dot -->
     <a class="nav-logo" href="#">
-        <span></span>
-        NovaMind Analytics
+        <!-- Pulse dot -->
+        <div class="logo-dot"></div>
+        <!-- Premium custom logo brand container -->
+        <div class="logo-container">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); display: block;">
+                <rect width="26" height="26" rx="6" fill="white"/>
+                <path d="M7 8C7 7.44772 7.44772 7 8 7H18C18.5523 7 19 7.44772 19 8V14C19 14.5523 18.5523 15 18 15H10.5L7.5 17.5V8Z" fill="url(#logoGrad)"/>
+                <defs>
+                    <linearGradient id="logoGrad" x1="7" y1="7" x2="19" y2="18" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#1db992"/>
+                        <stop offset="100%" stop-color="#2fc79f"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span style="font-family: var(--font-family); font-weight: 800; color: #ffffff; font-size: 16.5px; letter-spacing: -0.6px; text-transform: lowercase;">novamind <span style="font-weight: 400; color: #2fc79f;">analytics</span></span>
+        </div>
     </a>
 
     <!-- Department navigation links -->
@@ -33,9 +47,6 @@
         <li><a href="#">HR</a></li>
         <li><a href="#">Finance</a></li>
     </ul>
-
-    <!-- Small semester badge -->
-    <div class="nav-badge">Summer 2026</div>
 </nav>
 
 
@@ -754,7 +765,7 @@
      FOOTER
 ════════════════════════════════════ -->
 <footer>
-    <strong>NovaMind Analytics</strong> &nbsp;·&nbsp; IT Department &nbsp;·&nbsp; Summer 2026
+    <strong>NovaMind Analytics</strong> &nbsp;·&nbsp; IT Department
 </footer>
 
 
