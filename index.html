@@ -412,21 +412,27 @@
 
                 <h3 class="card-title">🖥 Remote Support</h3>
                 <p class="card-desc">
-                    Connect to an employee's device for live troubleshooting using
-                    AnyDesk or TeamViewer.
+                    Connect to an employee's device for live troubleshooting using AnyDesk, TeamViewer, Zoom, or Slack.
                 </p>
 
-                <!-- Quick launch buttons -->
-                <div class="remote-btn-list">
-                    <button class="btn btn-ghost remote-btn" id="btn-anydesk">
-                        <span class="dot-green">⬡</span> Launch AnyDesk
-                    </button>
-                    <button class="btn btn-ghost remote-btn" id="btn-teamviewer">
-                        <span class="dot-blue">⬡</span> Launch TeamViewer
-                    </button>
-                    <button class="btn btn-ghost remote-btn" id="btn-zoom">
-                        <span class="dot-lime">⬡</span> Start Zoom Call
-                    </button>
+                <!-- Quick launch remote support cards -->
+                <div class="remote-tools-grid">
+                    <div class="remote-tool-card anydesk" id="remote-anydesk">
+                        <div class="remote-tool-title">AnyDesk</div>
+                        <div class="remote-tool-desc">Instant remote access &amp; live device troubleshooting</div>
+                    </div>
+                    <div class="remote-tool-card teamviewer" id="remote-teamviewer">
+                        <div class="remote-tool-title">TeamViewer</div>
+                        <div class="remote-tool-desc">Full remote desktop control for complex IT fixes</div>
+                    </div>
+                    <div class="remote-tool-card zoom" id="remote-zoom">
+                        <div class="remote-tool-title">Zoom</div>
+                        <div class="remote-tool-desc">Screen-share support calls with employees</div>
+                    </div>
+                    <div class="remote-tool-card slack" id="remote-slack">
+                        <div class="remote-tool-title">Slack</div>
+                        <div class="remote-tool-desc">IT ticket alerts, team notifications &amp; comms</div>
+                    </div>
                 </div>
             </div>
         </article>
@@ -689,7 +695,7 @@
                         <div class="wf-num">5</div>
                         <div class="wf-content">
                             <div class="wf-title">Provide remote support</div>
-                            <div class="wf-sub">AnyDesk / TeamViewer / Zoom</div>
+                            <div class="wf-sub">AnyDesk / TeamViewer / Zoom / Slack</div>
                         </div>
                     </div>
                     <div class="wf-step" style="animation-delay: 0.30s">
@@ -716,7 +722,7 @@
             <div class="card-content">
                 <div class="card-tags">
                     <div class="card-pill">Stack</div>
-                    <div class="card-pill">12 Tools</div>
+                    <div class="card-pill">13 Tools</div>
                 </div>
 
                 <div class="card-meta">
@@ -742,6 +748,7 @@
                     <div class="tool-item"><div class="tool-name">Cloudflare</div><div class="tool-use">DNS &amp; SSL</div></div>
                     <div class="tool-item"><div class="tool-name">AnyDesk</div><div class="tool-use">Remote support</div></div>
                     <div class="tool-item"><div class="tool-name">TeamViewer</div><div class="tool-use">Remote desktop</div></div>
+                    <div class="tool-item"><div class="tool-name">Slack</div><div class="tool-use">IT support &amp; comms</div></div>
                     <div class="tool-item"><div class="tool-name">Bitdefender</div><div class="tool-use">Cybersecurity</div></div>
                     <div class="tool-item"><div class="tool-name">VS Code</div><div class="tool-use">Development</div></div>
                     <div class="tool-item"><div class="tool-name">phpMyAdmin</div><div class="tool-use">Database mgmt</div></div>

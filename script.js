@@ -427,4 +427,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   startFirewallSimulation();
+
+  // remote support buttons interactive toast feedback
+  const remoteButtons = [
+    { id: 'remote-anydesk', message: '✓ Launching AnyDesk remote session...' },
+    { id: 'remote-teamviewer', message: '✓ Launching TeamViewer remote session...' },
+    { id: 'remote-zoom', message: '✓ Starting Zoom meeting...' },
+    { id: 'remote-slack', message: '✓ Opening Slack support channel...' }
+  ];
+
+  remoteButtons.forEach(btnInfo => {
+    const btn = document.getElementById(btnInfo.id);
+    if (btn) {
+      btn.addEventListener('click', () => {
+        showToast(btnInfo.message);
+      });
+    }
+  });
 });

@@ -738,21 +738,63 @@ tbody tr:last-child td { border-bottom: none; }
 /* ==========================================================================
    14. REMOTE SUPPORT BUTTONS — inline style override helpers
    ========================================================================== */
-.remote-btn-list {
+.remote-tools-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.remote-tool-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 14px 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
+    gap: 4px;
+    position: relative;
+    border-left: 5px solid var(--aws-blue);
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s, border-color 0.22s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.remote-btn {
-    justify-content: flex-start;
-    gap: 10px;
+.remote-tool-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #ccc;
 }
 
-.dot-green  { color: #1a7f4e; font-size: 18px; }
-.dot-blue   { color: var(--aws-blue); font-size: 18px; }
-.dot-lime   { color: #6b9900; font-size: 18px; }
+.remote-tool-card.anydesk {
+    border-left-color: #0073BB;
+}
+
+.remote-tool-card.teamviewer {
+    border-left-color: #6366f1;
+}
+
+.remote-tool-card.zoom {
+    border-left-color: #10b981;
+}
+
+.remote-tool-card.slack {
+    border-left-color: #f59e0b;
+}
+
+.remote-tool-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.remote-tool-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+    line-height: 1.4;
+}
 
 /* ==========================================================================
    14.b CYBERSECURITY CARD & SYSTEM PROTECTION
